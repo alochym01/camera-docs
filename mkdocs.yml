@@ -19,6 +19,7 @@ nav:
         - Setup: vsftp/setup.md
         - Config: vsftp/config.md
         - Trouble shoot: vsftp/troubleshoot.md
+        - Motion detection: vsftp/motion-detection.md
     - Django:
         - Install: django/install.md
         - Setup: django/setup.md
@@ -29,6 +30,7 @@ nav:
         - Setup: flask/setup.md
         - Config: flask/config.md
         - Trouble shoot: flask/troubleshoot.md
+        - Playback API: flask/playback-api.md
     - Elasticsearch:
         - Install: elasticsearch/install.md
         - Setup: elasticsearch/setup.md
@@ -48,6 +50,8 @@ nav:
         - Install: nginx/install.md
         - Setup: nginx/setup.md
         - Config: nginx/config.md
+        - Image Filter: nginx/image-filter.md
+        - Playback: nginx/playback.md
         - Trouble shoot: nginx/troubleshoot.md
     - Openresty:
         - Install: openresty/install.md
