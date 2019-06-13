@@ -6,7 +6,7 @@ site_author: MkDocs Team
 repo_url: https://github.com/alochym01/camera-docs
 
 theme:
-    name: readthedocs
+    name: material
 nav:
     - Home: index.md
     - Ansible:
@@ -18,6 +18,7 @@ nav:
         - Install: vsftp/install.md
         - Setup: vsftp/setup.md
         - Config: vsftp/config.md
+        - Motion-detection: vsftp/motion-detection.md
         - Trouble shoot: vsftp/troubleshoot.md
         - Motion detection: vsftp/motion-detection.md
     - Django:
