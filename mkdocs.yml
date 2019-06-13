@@ -6,7 +6,7 @@ site_author: MkDocs Team
 repo_url: https://github.com/alochym01/camera-docs
 
 theme:
-    name: readthedocs
+    name: material
 nav:
     - Home: index.md
     - Ansible:
