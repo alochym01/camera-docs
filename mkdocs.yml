@@ -18,6 +18,7 @@ nav:
         - Install: vsftp/install.md
         - Setup: vsftp/setup.md
         - Config: vsftp/config.md
+        - Motion-detection: vsftp/motion-detection.md
         - Trouble shoot: vsftp/troubleshoot.md
         - Motion detection: vsftp/motion-detection.md
     - Django:
