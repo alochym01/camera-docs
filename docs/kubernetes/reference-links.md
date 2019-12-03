@@ -1,0 +1,5 @@
+-   https://computingforgeeks.com/setup-etcd-cluster-on-centos-debian-ubuntu/
+-   https://www.ibm.com/support/knowledgecenter/en/SSMNED_5.0.0/com.ibm.apic.install.doc/tapic_install_Kubernetes.html
+-   https://cloudnativelabs.github.io/post/2017-04-19-kube-router/
+-   https://www.cnblogs.com/williamjie/p/11137090.html
+-    **https://www.infoq.cn/article/coreos-analyse-etcd/**
