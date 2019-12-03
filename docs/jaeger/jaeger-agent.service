@@ -1,0 +1,9 @@
+[Unit]
+Description= jaeger-agent
+After = multi-user.target
+
+[Service]
+Type = idle
+ExecStart = /home/ansible/jaeger-1.13.0-linux-amd64/jaeger-agent --reporter.grpc.host-port=127.0.0.1:14250
+[Install]
+WantedBy = multi-user.target
