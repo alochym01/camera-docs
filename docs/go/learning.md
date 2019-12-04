@@ -24,6 +24,7 @@ rune //alias for int32
 float32 float64
 
 complext64 complex128
+https://golang.org/pkg/fmt/
 ### First go program
 
 ```go
@@ -72,24 +73,238 @@ func main() {
 }
 
 ```
-### Global varibale 
+### Global varibale and variable scope
 First, one should discuss storage in terms of storage duration, the way C++ standard does: "stack" refers to automatic storage duration, while "heap" refers to dynamic storage duration. Both "stack" and "heap" are allocation strategies, commonly used to implement objects with their respective storage durations.
-Global variables have static storage duration. They are stored in an area that is separate from both "heap" and "stack". Global constant objects are usually stored in "code" segment, while non-constant global objects are stored in the "data" segment. 
+Global variables have static storage duration. They are stored in an area that is separate from both "heap" and "stack". Global constant objects are usually stored in "code" segment, while non-constant global objects are stored in the "data" segment.
+```go
+package main
 
+import (
+	"fmt"
+	"math/cmplx"
+)
+
+var (
+	ToBe   bool       = false
+	MaxInt uint64     = 1<<64 - 1
+	z      complex128 = cmplx.Sqrt(-5 + 12i)
+)
+
+func main() {
+	fmt.Printf("Type: %T Value: %v\n", ToBe, ToBe)
+	fmt.Printf("Type: %T Value: %v\n", MaxInt, MaxInt)
+	fmt.Printf("Type: %T Value: %v\n", z, z)
+}
+
+```
+### Zero value
+ Variables declared without an explicit initial value are given their zero value.
+
+The zero value is:
+
+    0 for numeric types,
+    false for the boolean type, and
+    "" (the empty string) for strings.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var i int
+	var f float64
+	var b bool
+	var s string
+	fmt.Printf("%v %v %v %q\n", i, f, b, s)
+}
+```
+
+### Type conversion
+
+    i := 42
+    f := float64(i)
+    u := uint(f)
+
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	var x, y int = 3, 4
+	var f float64 = math.Sqrt(float64(x*x + y*y))
+	var z uint = uint(f)
+	fmt.Println(x, y, z)
+}
+```
+
+### Constants
+    Constants are declared like variables, but with the const keyword.
+    Constants can be character, string, boolean, or numeric values.
+    Constants cannot be declared using the := syntax. 
+
+```go
+package main
+
+import "fmt"
+
+const Pi = 3.14
+
+func main() {
+	const World = "世界"
+	fmt.Println("Hello", World)
+	fmt.Println("Happy", Pi, "Day")
+
+	const Truth = true
+	fmt.Println("Go rules?", Truth)
+}
+```
 ## 2. TDD vs BDD (Test Driven vs Behavior Driven)
 Inline-style: 
 ![alt text](./tddvsbdd.png "Test Driven vs Behavior")
 
 ### Basic things enough to code meo cao chuot chay
-* Function
+### Function
 ```go
 func add(x, y int) int {}
 func (receiver) func_name(parameters) return_type{code}
+
+package main
+
+import "fmt"
+
+//Normal function   
+func add(x int, y int) int { //func add(x, y int) int {
+	return x + y
+}
+
+//Multiple return value
+func swap(x, y string) (string, string) {
+	return y, x
+}
+
+//Named return value
+func split(sum int) (x, y int) {
+	x = sum * 4 / 9
+	y = sum - x
+	return
+}
+
+func main() {
+    fmt.Println(add(42, 13))
+    a, b := swap("hello", "world")
+	fmt.Println(a, b)
+}
+
 ```
-* If else
 
+### If else
+```go
+package main
+ 
+import (
+	"fmt"
+)
+ 
+func main() {
+	x := 100
+ 
+	if x == 50 {
+		fmt.Println("Germany")
+	} else if x == 100 {
+		fmt.Println("Japan")
+	} else {
+		fmt.Println("Canada")
+        }
+        if x := 100; x == 100 {
+		fmt.Println("Germany")
+	}
+}
+```
+### For
+     Go has only one looping construct, the for loop. 
 
-3.. "Hello World with Test, Packages, Go Doc"
+* The init statement: executed before the first iteration
+* The condition expression: evaluated before every iteration
+* The post statement: executed at the end of every iteration
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	sum := 0
+	for i := 0; i < 10; i++ {
+		sum += i
+    }
+    for ; sum < 1000; {
+		sum += sum
+    }
+    
+	fmt.Println(sum)
+}
+
+```
+### Go "While"
+    Drop the semicolon for ---> while
+
+```go
+package main
+
+import "fmt"
+
+var alo int
+func main() {
+	alo = 100
+	sum := 1
+	for sum < 1000 {
+		sum += sum
+	}
+	fmt.Println(alo,sum)
+}
+```
+
+### Switch
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	fmt.Println("When's Saturday?")
+	today := time.Now().Weekday()
+	switch time.Saturday {
+	case today + 0:
+		fmt.Println("Today.")
+	case today + 1:
+		fmt.Println("Tomorrow.")
+	case today + 2:
+		fmt.Println("In two days.")
+	default:
+		fmt.Println("Too far away.")
+    }
+    
+    t := time.Now()
+	switch {
+	case t.Hour() < 12:
+		fmt.Println("Good morning!")
+	case t.Hour() < 17:
+		fmt.Println("Good afternoon.")
+	default:
+		fmt.Println("Good evening.")
+	}
+}
+```
+
+## 3. "Hello World with Test, Packages, Go Doc"
 
 - Basic code structurec
 export GOPATH= **Current directory**
@@ -133,41 +348,87 @@ The test function takes one argument only t *testing.T
 For now it's enough to know that your t of type *testing.T is your "hook" into the testing framework so you can do things like t.Fail() when you want to fail.
 ```
 ### Go doc
+Add comment and type go doc inside the package
 
+### Exercise
+Create Calculation with ADD, SUBTRACT, MULTIPLY, DEVICE
 
-4. "Variable, If else condition, Function"
+## 3. "Arrays, Slices, Maps"
+    ARRAYS is a list of values of particular type.
+    An array holds a specific number of elements; no means are availble to easily add more elements to an array.
+```go
+//Declare, Define
+var x [5]int -----> zero value [0 0 0 0 0]
+//Set, Get element
+x[4] = 100
+//Insert
+[0 0 0 0 100] or dung for
+//Update
+x[2] = 100 ----> [0 0 100 0 100]
+//Delete
+```
 
-3. "Arrays, Slices, Maps"
+    SLICES also a list of elements of a particular type, but unlike arrays, tools are available to add or remove elements
+    Slices don't hold any data themselves. A slice is merely a view into the elements of an underlying array.
+```go
+//Declare, Define
+var x []float64 -------> The only difference between this and an array is the missing length between the brackets. In this case x has been created with a length of 0
+x := make([]float64, 5)
+x := make([]float64, 5, 10) -----> slice with 10 elements underlying array
+//Set, Get element, //Insert, //Update
+func main() {
+  slice1 := []int{1,2,3}
+  slice2 := append(slice1, 4, 5)
+  fmt.Println(slice1, slice2)
+}
+func main() {
+  slice1 := []int{1,2,3}
+  slice2 := make([]int, 2)
+  copy(slice2, slice1)
+  fmt.Println(slice1, slice2)
+}
+```
 
-4. "Pointer, Struct, Types "
+    MAPS is a collection where each value is stored under a corresponding key.
+    Whereas arrays and slices can only use integers as indexes, a map can use a any type for keys.
+    All of a map's keys must be the same type, and all the values must be the same type, but the keys don't have to be the same type as the values.
+```go
+//Declare, Define
+//Set, Get element
+//Insert
+//Update
+//Delete
+```
 
-5. "Encapsulation, Method, Interfaces"
+## 4. "Pointer, Struct, Types "
 
-6. "Errors"
+## 5. "Encapsulation, Method, Interfaces"
 
-7. "Dependency Injection"
+## 6. "Errors" and "Defer"
 
-8. "Mocking"
+## 7. "Dependency Injection"
 
-9. "Concurrency"
+## 8. "Mocking"
 
-10. "Select"
+## 9. "Concurrency"
 
-11. "Reflection"
+## 10. "Select"
 
-12. "Sync"
+## 11. "Reflection"
 
-13. "Context"
+## 12. "Sync"
 
-14. "Property based tests, Refactorism"
+## 13. "Context"
 
-15. "Maths"
+## 14. "Property based tests, Refactorism"
 
-## Go Advanced
-1. "HTTP server"
-2. "JSON, routing, embedding"
-3. "IO and sorting"
-4. "Comandline & package structure"
-5. "Time"
-6. "WebSockets"
-7. "Ginko" Framework
+## 15. "Maths"
+
+# Go Advanced
+## 1. "HTTP server"
+## 2. "JSON, routing, embedding"
+## 3. "IO and sorting"
+## 4. "Comandline & package structure"
+## 5. "Time"
+## 6. "WebSockets"
+## 7. "Ginko" Framework
