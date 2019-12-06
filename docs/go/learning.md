@@ -394,10 +394,13 @@ func main() {
     All of a map's keys must be the same type, and all the values must be the same type, but the keys don't have to be the same type as the values.
 ```go
 //Declare, Define
+ m := make(map[string]int)
 //Set, Get element
-//Insert
-//Update
+m["one"] = 12
+m["two"] = 05
+value,can_get := m["one"]
 //Delete
+delete(m, "two")
 ```
 
 ## 4. "Pointer, Struct, Types "

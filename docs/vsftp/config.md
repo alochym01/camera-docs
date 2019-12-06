@@ -7,7 +7,7 @@
 		  listeners:
 		  - address:
 		      socket_address:
-		        address: 42.118.242.153
+		        address: {ip}
 		        port_value: 21
 		    filter_chains:
 		    - filters:
@@ -17,7 +17,7 @@
 		          cluster: ftp_server
 		  - address:
 		      socket_address:
-		        address: 42.118.242.153
+		        address: {ip}
 		        port_value: 80
 		    filter_chains:
 		    - filters:
@@ -50,7 +50,7 @@
 		        - endpoint:
 		            address:
 		              socket_address:
-		                address: 42.118.242.153
+		                address: {ip}
 		                port_value: 21021
 		  - name: account_server
 		    connect_timeout: 0.25s
@@ -76,7 +76,7 @@
 		        - endpoint:
 		            address:
 		              socket_address:
-		                address: 42.118.242.134
+		                address: {ip}
 		                port_value: 9411
 		tracing:
 		  http:

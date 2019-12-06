@@ -4,7 +4,7 @@
 # Jaeger collector
 - Agent which collects data and put to storage
 ```bash
- ./jaeger-collector --span-storage.type elasticsearch --es.server-urls http://42.118.242.146:9200 --collector.zipkin.http-port=9411
+ ./jaeger-collector --span-storage.type elasticsearch --es.server-urls http://{elasticsearch}:9200 --collector.zipkin.http-port=9411
 ```
 Port |	Protocol |	Function |
 |-----|-----|----|
@@ -17,7 +17,7 @@ Port |	Protocol |	Function |
 # Jaeger Query Service & UI
 jaeger
 ```cmd
-./jaeger-query --span-storage.type elasticsearch --es.server-urls http://42.118.242.146:9200
+./jaeger-query --span-storage.type elasticsearch --es.server-urls http://{elasticsearch}:9200
 ```
 |Port |	Protocol |	Function |
 |-----|-----|----|

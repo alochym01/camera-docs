@@ -2,15 +2,15 @@
     "@timestamp": "2019-08-10T09:05:59.823Z",
     "@version": "1",
     "beat": {
-        "hostname": "ftp-01-hcm.fcam.vn",
-        "name": "ftp-01-hcm.fcam.vn",
+        "hostname": "{host}",
+        "name": "{host}",
         "version": "6.8.2"
     },
     "cameraserial": "camtest",
     "daterecord": "2019-08-10",
     "ftplogdate": "Sat Aug 10 16:05:58 2019",
     "host": {
-        "name": "ftp-01-hcm.fcam.vn"
+        "name": "{host}"
     },
     "input": {
         "type": "log"
@@ -29,10 +29,10 @@
     "recordtimestampftp": "2019-08-10 160557",
     "source": "/var/log/vsftpd.log",
     "timerecord": "160557",
-    "vsftp_path": "/data/ftp/camtest/192.168.1.116_00001112a1b1/2019-08-10/01/pic/160557056.jpg",
+    "vsftp_path": "160557056.jpg",
     "vsftpd_action": "UPLOAD",
     "vsftpd_action_status": "OK",
-    "vsftpd_client_ip": "42.118.242.153",
+    "vsftpd_client_ip": "{ip}",
     "vsftpd_file_size": "105925 bytes",
     "vsftpd_file_transfer_speed": "5805.82Kbyte/sec",
     "vsftpd_pid": "pid 50048"

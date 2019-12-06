@@ -17,7 +17,7 @@
             5) "created_at"
             6) "2019-08-12T11:09:45.864601Z"
             7) "description"
-            8) "app.task.thumbnails({'vsftpd_pid': 'pid 49239', 'cameraserial': 'camtest', 'vsftpd_file_size': '3246064 bytes', '@timestamp': '2019-08-12T11:09:44.717Z', 'offset': 7199333, 'prospector': {'type': 'log'}, 'host': {'name': 'ftp-01-hcm.fcam.vn'}, 'source': '/var/log/vsftpd.log', 'module': 'Vsftp_vid', 'log': {'file': {'path': '/var/log/vsftpd.log'}}, 'recordtimestampftpv': '2019-08-12 18.09.05', 'vsftpd_file_transfer_speed': '4228.30Kbyte/sec', 'vsftp_path': '/data/ftp/camtest/192.168.1.119_32769a4bd4a7/2019-08-12/01/rec/18.09.05-18.09.37[M][@f94][0].h264', 'beat': {'hostname': 'ftp-01-hcm.fcam.vn', 'name': 'ftp-01-hcm.fcam.vn', 'version': '6.8.2'}, 'vsftpd_action_status': 'OK', 'vsftpd_client_ip': '42.118.242.153', '@version': '1', 'daterecordv': '2019-08-12', 'vsftpd_action': 'UPLOAD', 'ftplogdate': 'Mon Aug 12 18:09:40 2019', 'recordtimestamp': '2019-08-12T11:09:05.000Z', 'input': {'type': 'log'}, 'timerecordv': '18.09.05'})"
+            8) "app.task.thumbnails({'vsftpd_pid': 'pid 49239', 'cameraserial': 'camtest', 'vsftpd_file_size': '3246064 bytes', '@timestamp': '2019-08-12T11:09:44.717Z', 'offset': 7199333, 'prospector': {'type': 'log'}, 'host': {'name': 'ftp-01-hcm.fcam.vn'}, 'source': '/var/log/vsftpd.log', 'module': 'Vsftp_vid', 'log': {'file': {'path': '/var/log/vsftpd.log'}}, 'recordtimestampftpv': '2019-08-12 18.09.05', 'vsftpd_file_transfer_speed': '4228.30Kbyte/sec', 'vsftp_path': '/data/ftp/camtest/192.168.1.119_32769a4bd4a7/2019-08-12/01/rec/18.09.05-18.09.37[M][@f94][0].h264', 'beat': {'hostname': 'ftp-01-hcm.fcam.vn', 'name': 'ftp-01-hcm.fcam.vn', 'version': '6.8.2'}, 'vsftpd_action_status': 'OK', 'vsftpd_client_ip': '{ip}', '@version': '1', 'daterecordv': '2019-08-12', 'vsftpd_action': 'UPLOAD', 'ftplogdate': 'Mon Aug 12 18:09:40 2019', 'recordtimestamp': '2019-08-12T11:09:05.000Z', 'input': {'type': 'log'}, 'timerecordv': '18.09.05'})"
             9) "enqueued_at"
             10) "2019-08-12T11:09:45.864915Z"
             11) "timeout"
@@ -103,7 +103,7 @@
     ```bash
     input {
     beats {
-        host => "42.118.242.146"
+        host => "{ip}"
         port => 5044
     }
     }
@@ -162,7 +162,7 @@
         } else {
             if ("Vsftp_vid" not in [module]) {
                 elasticsearch {
-                    hosts => "42.118.242.146:9200"
+                    hosts => "{ip}"
                     manage_template => false
                     index => "camipc_%{[cameraserial]}"
                     document_type => "camerarecord"
