@@ -99,6 +99,11 @@ nav:
         - using iLO: ILO/Huong dan su dung iLO web interface.md
     - OpenVPN:
         - using OpenVPN: OpenVPN/Huong dan OpenVPN.md
+    - Jaeger:
+        - Install: jaeger/install.md
+        - Config: jaeger/config.md
+    - Go lang:
+        - Learn: go/learning.md
     - User Guide:
         - Writing Your Docs: user-guide/writing-your-docs.md
         - Styling Your Docs: user-guide/styling-your-docs.md
