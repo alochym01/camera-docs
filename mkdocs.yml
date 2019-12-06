@@ -95,6 +95,8 @@ nav:
         - Config: kubernetes/config.md
         - Trouble shoot: kubernetes/troubleshoot.md
         - Learn: kubernetes/Table-Of-Contents-Kubernetes.md
+    - HP iLO:
+        - using iLO: ILO/Huong dan su dung iLO web interface.md
     - OpenVPN:
         - using OpenVPN: OpenVPN/Huong dan OpenVPN.md
     - User Guide:
