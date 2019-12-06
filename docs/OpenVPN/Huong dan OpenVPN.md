@@ -15,7 +15,7 @@
 	-	[https://openvpn.net/client-connect-vpn-for-windows/](https://openvpn.net/client-connect-vpn-for-windows/)
     -	Chọn phiên bản V3 (Beta), **không  chọn bản khác**
 -   Cài đặt OpenVPN
--   Mở  “OpenVPN  Connect” chọn  tab  “IMPORT FROM  FILE”
+-   Mở  `OpenVPN  Connect` chọn  tab  `IMPORT FROM  FILE`
 -   Kéo thả file config (.ovpn)
 -   Nhập  username và password
 	-	Tick vào “Save password” và nhập password nếu không muốn nhập password cho lần sau
@@ -51,14 +51,13 @@
 	    - 	Giao thức tích hợp sẵn trên Windows, thường dùng cho client và server là windows
 	    - 	Ưu điểm: không thấy hoạt động trên màn hình, server logout thì vẫn remote vào được. Tuy nhiên muốn dùng cho server là Linux (CentOS) thì phải cài đặt giao thức XRDP
 	    - 	**Cài đặt:**
-		    -   Cài đặt giao thức XRDP
-			    - 	Install  the  EPEL  repository
+		    - 	Install  the  EPEL  repository
 
-					```bash
+				```bash
 					sudo yum  install epel-release
 					hoặc
 					sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-					```
+				```
 
        		- 	Install XRDP => `sudo yum install xrdp tigervnc-server`
     			- 	Start service và cho phép tự chạy khi reboot
