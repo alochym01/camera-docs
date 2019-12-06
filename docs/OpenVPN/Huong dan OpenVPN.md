@@ -34,11 +34,14 @@
     	- 	Giao thức tích hợp sẵn trong Linux, thường dùng cho client và server là Linux
     	- 	Cách thể hiện giống TeamViewer: thấy hoạt động trên màn hình, trên server phải login...
     	- 	**Cài đặt:**
-		    1.  Từ giao diện Linux, vào `*Settings*  →  *Sharing*`
+		    1.  Từ giao diện Linux, vào `Settings  →  Sharing`
 		    2.  Cho phép *Screen sharing*, *Remote Login* (SSH), sau đó đặt password
-	            ![Allow connect when using VNC protocol](https://drive.google.com/uc?id=15T6a7__pYqTgB4rD239RaMsl14fI2mMa)
+
+	        ![Allow connect when using VNC protocol](https://drive.google.com/uc?id=15T6a7__pYqTgB4rD239RaMsl14fI2mMa)
+
 		    3.  Mở TCP port
-				```
+
+				```bash
 				sudo firewall-cmd --zone=public --add-port=5900/tcp --permanent
 				sudo firewall-cmd --reload
 				sudo firewall-cmd --list-all
@@ -50,19 +53,24 @@
 	    - 	**Cài đặt:**
 		    1.  Cài đặt giao thức XRDP
 			    - 	Install  the  EPEL  repository
+
 					```bash
 					sudo yum  install epel-release
 					hoặc
 					sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 					```
+
         		- 	Install XRDP => `sudo yum install xrdp tigervnc-server`
     			- 	Start service và cho phép tự chạy khi reboot
+
 					```bash
 					sudo systemctl start xrdp.service
 					sudo systemctl enable xrdp.service
 		            ```
+
 			    - 	Check XRDP lắng nghe trên port 3389 => `netstat -antup | grep xrdp`
     			- 	Mở TCP port
+
 					```bash
 					sudo firewall-cmd --zone=public --add-port=3389/tcp --permanent
 					sudo firewall-cmd --reload
