@@ -12,11 +12,11 @@ Hệ thống quản lý để lưu trữ và trích xuất video được họat
         *   SRS (Sẽ bổ sung)
     *   Image log của FTP motion:
 ``` shell
-Mon Mar 25 11:34:08 2019 [pid 55389] [chivt2] OK UPLOAD: Client "118.69.167.41", "/192.168.2.148_001216dbcf97/2019-03-25/01/pic/1134014294959552.jpg", 66472 bytes, 110.86Kbyte/sec
+Mon Mar 25 11:34:08 2019 [pid 55389] [host] OK UPLOAD: Client "118.69.167.41", "/192.168.2.148_001216dbcf97/2019-03-25/01/pic/1134014294959552.jpg", 66472 bytes, 110.86Kbyte/sec
 
     Video log của FTP motion
     ``` shell
-    Sat Mar 23 03:00:34 2019 [pid 11852] [chivt2] OK UPLOAD: Client "118.69.167.41", "/192.168.2.148_001216dbcf97/2019-03-23/01/rec/03.00.10-03.00.20[M][@8a6][0].h264", 571376 bytes, 597.56Kbyte/sec
+    Sat Mar 23 03:00:34 2019 [pid 11852] [host] OK UPLOAD: Client "118.69.167.41", "/192.168.2.148_001216dbcf97/2019-03-23/01/rec/03.00.10-03.00.20[M][@8a6][0].h264", 571376 bytes, 597.56Kbyte/sec
 
 ### Grok parse tương ứng; (vào relation tài liệu elasticsearch, logstash, filebeat để hiểu hơn về grok)
  * Wowza Recording:
@@ -100,7 +100,7 @@ Vsftp video:
         },
         "timerecordv": "03.00.10",
         "ftplogdate": "Sat Mar 23 03:00:34 2019",
-        "camera_serial": "chivt2",
+        "camera_serial": "host",
         "vsftpd_file_size": " 571376 bytes",
         "prospector": {
             "type": "log"
