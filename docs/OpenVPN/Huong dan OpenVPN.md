@@ -34,14 +34,14 @@
     	- 	Giao thức tích hợp sẵn trong Linux, thường dùng cho client và server là Linux
     	- 	Cách thể hiện giống TeamViewer: thấy hoạt động trên màn hình, trên server phải login...
     	- 	**Cài đặt:**
-		    -   Từ giao diện Linux, vào `Settings  →  Sharing`
+		    -   Từ giao diện Linux, vào *Settings  →  Sharing*
 		    -   Cho phép *Screen sharing*, *Remote Login* (SSH), sau đó đặt password
 
 	        ![Allow connect when using VNC protocol](https://drive.google.com/uc?id=15T6a7__pYqTgB4rD239RaMsl14fI2mMa)
 
 		    -   Mở TCP port
 
-				```bash
+				```
 				sudo firewall-cmd --zone=public --add-port=5900/tcp --permanent
 				sudo firewall-cmd --reload
 				sudo firewall-cmd --list-all
@@ -53,16 +53,16 @@
 	    - 	**Cài đặt:**
 		    - 	Install  the  EPEL  repository
 
-				```bash
-					sudo yum  install epel-release
-					hoặc
-					sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+				```
+				sudo yum  install epel-release
+				or
+				sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 				```
 
        		- 	Install XRDP => `sudo yum install xrdp tigervnc-server`
     			- 	Start service và cho phép tự chạy khi reboot
 
-					```bash
+					```
 					sudo systemctl start xrdp.service
 					sudo systemctl enable xrdp.service
 		            ```
@@ -70,7 +70,7 @@
 			    - 	Check XRDP lắng nghe trên port 3389 => `netstat -antup | grep xrdp`
     			- 	Mở TCP port
 
-					```bash
+					```
 					sudo firewall-cmd --zone=public --add-port=3389/tcp --permanent
 					sudo firewall-cmd --reload
 					sudo firewall-cmd --list-all
@@ -78,7 +78,7 @@
 
 ## Bước 3: Từ client kết nối đến server
 ### Đối với máy client là Linux (CentOS)
-Từ giao diện Linux, *Applications* --> *Utilities* --> *Remote Desktop Viewer*
+Từ giao diện Linux, *Applications --> Utilities --> Remote Desktop Viewer*
 
 ![linux-connect](https://drive.google.com/uc?id=1VUrf2xjfY9F7zwooS7WasI0_2qVmHJ1o)
 
