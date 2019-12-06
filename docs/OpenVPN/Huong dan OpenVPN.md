@@ -11,15 +11,15 @@
 
 ### Đối với máy client là windows
 
-1. 	Download OpenVPN cho windows:
+-   Download OpenVPN cho windows:
 	-	[https://openvpn.net/client-connect-vpn-for-windows/](https://openvpn.net/client-connect-vpn-for-windows/)
     -	Chọn phiên bản V3 (Beta), **không  chọn bản khác**
-2. 	Cài đặt OpenVPN
-3. 	Mở  “OpenVPN  Connect” chọn  tab  “IMPORT FROM  FILE”
-4. 	Kéo thả file config (.ovpn)
-5. 	Nhập  username và password
+-   Cài đặt OpenVPN
+-   Mở  “OpenVPN  Connect” chọn  tab  “IMPORT FROM  FILE”
+-   Kéo thả file config (.ovpn)
+-   Nhập  username và password
 	-	Tick vào “Save password” và nhập password nếu không muốn nhập password cho lần sau
-6. 	Chọn “Add” và connect
+-   Chọn “Add” và connect
 
 
 ### Đối với máy client là Linux (CentOS)
@@ -30,16 +30,16 @@
 ## Bước 2: Cho phép máy client connect đến máy server (thiết lập trên máy server)
 
 -   Có 2 giao thức phổ biến trên máy server cho phép client kết nối từ xa:
-    - **VNC**:
+    -   **VNC**:
     	- 	Giao thức tích hợp sẵn trong Linux, thường dùng cho client và server là Linux
     	- 	Cách thể hiện giống TeamViewer: thấy hoạt động trên màn hình, trên server phải login...
     	- 	**Cài đặt:**
-		    1.  Từ giao diện Linux, vào `Settings  →  Sharing`
-		    2.  Cho phép *Screen sharing*, *Remote Login* (SSH), sau đó đặt password
+		    -   Từ giao diện Linux, vào `Settings  →  Sharing`
+		    -   Cho phép *Screen sharing*, *Remote Login* (SSH), sau đó đặt password
 
 	        ![Allow connect when using VNC protocol](https://drive.google.com/uc?id=15T6a7__pYqTgB4rD239RaMsl14fI2mMa)
 
-		    3.  Mở TCP port
+		    -   Mở TCP port
 
 				```bash
 				sudo firewall-cmd --zone=public --add-port=5900/tcp --permanent
@@ -47,11 +47,11 @@
 				sudo firewall-cmd --list-all
 				```
 
-    - **XRDP**:
+    -   **XRDP**:
 	    - 	Giao thức tích hợp sẵn trên Windows, thường dùng cho client và server là windows
 	    - 	Ưu điểm: không thấy hoạt động trên màn hình, server logout thì vẫn remote vào được. Tuy nhiên muốn dùng cho server là Linux (CentOS) thì phải cài đặt giao thức XRDP
 	    - 	**Cài đặt:**
-		    1.  Cài đặt giao thức XRDP
+		    -   Cài đặt giao thức XRDP
 			    - 	Install  the  EPEL  repository
 
 					```bash
