@@ -89,6 +89,12 @@ nav:
         - Setup: prometheus/setup.md
         - Config: prometheus/config.md
         - Trouble shoot: prometheus/troubleshoot.md
+    - Kubernetes:
+        - Install: kubernetes/install.md
+        - Setup: kubernetes/setup.md
+        - Config: kubernetes/config.md
+        - Trouble shoot: kubernetes/troubleshoot.md
+        - Learn: kubernetes/Table-Of-Contents-Kubernetes.md
     - User Guide:
         - Writing Your Docs: user-guide/writing-your-docs.md
         - Styling Your Docs: user-guide/styling-your-docs.md
