@@ -60,7 +60,7 @@
 					sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 					```
 
-        		- 	Install XRDP => `sudo yum install xrdp tigervnc-server`
+       		- 	Install XRDP => `sudo yum install xrdp tigervnc-server`
     			- 	Start service và cho phép tự chạy khi reboot
 
 					```bash
