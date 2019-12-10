@@ -366,6 +366,7 @@ x[4] = 100
 //Update
 x[2] = 100 ----> [0 0 100 0 100]
 //Delete
+
 ```
 
     SLICES also a list of elements of a particular type, but unlike arrays, tools are available to add or remove elements
@@ -387,6 +388,8 @@ func main() {
   copy(slice2, slice1)
   fmt.Println(slice1, slice2)
 }
+
+Unlike other languages, Go does not provide any built-in functions to remove an element from a slice. Items need to be removed from a slice by slicing them out.
 ```
 
     MAPS is a collection where each value is stored under a corresponding key.
