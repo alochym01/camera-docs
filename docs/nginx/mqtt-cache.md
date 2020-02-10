@@ -3,13 +3,16 @@
 
 -   Mô hình chạy sẽ là như sau:
 
-    ```bash
+    ```
 
                      ------------             	                   --------------
     CLient --------> | nginx:80 | --proxy to mqtt-authen server--> | nginx:8010 | --proxy --> django authen API|
                      ------------             	                   --------------
+
     ```
+
 -   Repo cho nginx javascript
+
     ```bash
 
     [nginx-stable]
@@ -25,6 +28,7 @@
 
 1.  `yum install nginx-module-njs`
 2.  Copy file cấu hình mqtt-auth.conf với nội dung sau vào `/etc/nginx/conf.d/`
+
     ```bash
 
     proxy_cache_path /mnt/ssd/nginx levels=1:2 keys_zone=mqtt:10m inactive=24h max_size=50g;
@@ -63,13 +67,14 @@
     ```
 
 3.  Create hello_world.js với nội dung sau vào `/etc/nginx/conf.d/`
+
     ```javascript
 
     function tosuperuser(r) {
         //r.error(r.requestBody)
         var m_username = JSON.parse(r.requestBody)['username'];
 
-        var regex = RegExp('SYS*');
+        var regex = RegExp('Alochym*');
         //r.error("user comming to: " + m_username);
         if (regex.test(m_username)) {
             //r.error("sys user comming to: " + m_username);
