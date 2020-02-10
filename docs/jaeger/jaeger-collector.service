@@ -1,0 +1,9 @@
+[Unit]
+Description= jaeger-collector
+After = multi-user.target
+
+[Service]
+Type = idle
+ExecStart = /home/ansible/jaeger-1.13.0-linux-amd64/jaeger-collector --span-storage.type elasticsearch --es.server-urls http://{ip}:9200 --collector.zipkin.http-port=9411
+[Install]
+WantedBy = multi-user.target
