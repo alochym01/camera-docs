@@ -5,9 +5,9 @@
 
     ```
 
-                     ------------             	                   --------------
-    CLient --------> | nginx:80 | --proxy to mqtt-authen server--> | nginx:8010 | --proxy --> django authen API|
-                     ------------             	                   --------------
+                     ---------------------                                   --------------
+    CLient --------> | mqtt-authen-plugin | --proxy to mqtt-authen server--> | nginx:8010 | --proxy --> django authen API|
+                     ---------------------                                   --------------
 
     ```
 
