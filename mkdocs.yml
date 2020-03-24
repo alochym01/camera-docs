@@ -105,6 +105,8 @@ nav:
           - Config: jaeger/config.md
     - Go lang:
           - Learn: go/learning.md
+    - Playback audit:
+          - Readme: playback-api-audit/README_ver2.md
     - User Guide:
           - Writing Your Docs: user-guide/writing-your-docs.md
           - Styling Your Docs: user-guide/styling-your-docs.md
