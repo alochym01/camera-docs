@@ -1,0 +1,9 @@
+[Unit]
+Description= jaeger-query
+After = multi-user.target
+
+[Service]
+Type = idle
+ExecStart = /home/ansible/jaeger-1.13.0-linux-amd64/jaeger-query --span-storage.type elasticsearch --es.server-urls http://{ip}:9200
+[Install]
+WantedBy = multi-user.target
