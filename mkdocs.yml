@@ -1,0 +1,132 @@
+site_name: Camera Project
+site_url: https://github.com/alochym01/camera-docs
+site_description: Project documentation with Markdown.
+site_author: MkDocs Team
+
+repo_url: https://github.com/alochym01/camera-docs
+
+theme:
+    name: readthedocs
+nav:
+    - Home: index.md
+    - Ansible:
+          - Install: ansible/install.md
+          - Setup: ansible/setup.md
+          - Config: ansible/config.md
+          - Trouble shoot: ansible/troubleshoot.md
+    - FTP:
+          - Install: vsftp/install.md
+          - Setup: vsftp/setup.md
+          - Config: vsftp/config.md
+          - Motion-detection: vsftp/motion-detection.md
+          - Trouble shoot: vsftp/troubleshoot.md
+          - Motion detection: vsftp/motion-detection.md
+    - Django:
+          - Install: django/install.md
+          - Setup: django/setup.md
+          - Config: django/config.md
+          - Trouble shoot: django/troubleshoot.md
+    - Flask:
+          - Install: flask/install.md
+          - Setup: flask/setup.md
+          - Config: flask/config.md
+          - Trouble shoot: flask/troubleshoot.md
+          - Playback API: flask/playback-api.md
+    - Elasticsearch:
+          - Install: elasticsearch/install.md
+          - Setup: elasticsearch/setup.md
+          - Config: elasticsearch/config.md
+          - Trouble shoot: elasticsearch/troubleshoot.md
+    - Logstash:
+          - Install: logstash/install.md
+          - Setup: logstash/setup.md
+          - Config: logstash/config.md
+          - Trouble shoot: logstash/troubleshoot.md
+    - Filebeat:
+          - Install: filebeat/install.md
+          - Setup: filebeat/setup.md
+          - Config: filebeat/config.md
+          - Trouble shoot: filebeat/troubleshoot.md
+    - Nginx:
+          - Install: nginx/install.md
+          - Setup: nginx/setup.md
+          - Config: nginx/config.md
+          - Image Filter: nginx/image-filter.md
+          - MQTT Authentication Cache: nginx/mqtt-cache.md
+          - Playback: nginx/playback.md
+          - Trouble shoot: nginx/troubleshoot.md
+    - Openresty:
+          - Install: openresty/install.md
+          - Setup: openresty/setup.md
+          - Config: openresty/config.md
+          - Trouble shoot: openresty/troubleshoot.md
+    - DM-writeboost:
+          - Install: dm-writeboost/install.md
+          - Setup: dm-writeboost/setup.md
+          - Config: dm-writeboost/config.md
+          - Trouble shoot: dm-writeboost/troubleshoot.md
+    - Lizardfs:
+          - Install: lizardfs/install.md
+          - Setup: lizardfs/setup.md
+          - Config: lizardfs/config.md
+          - Trouble shoot: lizardfs/troubleshoot.md
+    - Mysql:
+          - Install: mysql/install.md
+          - Setup: mysql/setup.md
+          - Config: mysql/config.md
+          - Trouble shoot: mysql/troubleshoot.md
+    - Redis:
+          - Install: redis/install.md
+          - Setup: redis/setup.md
+          - Config: redis/config.md
+          - Trouble shoot: redis/troubleshoot.md
+    - Memcached:
+          - Install: memcached/install.md
+          - Setup: memcached/setup.md
+          - Config: memcached/config.md
+          - Trouble shoot: memcached/troubleshoot.md
+    - Prometheus:
+          - Install: prometheus/install.md
+          - Setup: prometheus/setup.md
+          - Config: prometheus/config.md
+          - Trouble shoot: prometheus/troubleshoot.md
+    - Kubernetes:
+          - Install: kubernetes/install.md
+          - Setup: kubernetes/setup.md
+          - Config: kubernetes/config.md
+          - Trouble shoot: kubernetes/troubleshoot.md
+          - Learn: kubernetes/Table-Of-Contents-Kubernetes.md
+    - HP iLO:
+          - using iLO: ILO/Huong dan su dung iLO web interface.md
+    - OpenVPN:
+          - using OpenVPN: OpenVPN/Huong dan OpenVPN.md
+    - Jaeger:
+          - Install: jaeger/install.md
+          - Config: jaeger/config.md
+    - Go lang:
+          - Learn: go/learning.md
+    - Playback audit:
+          - Readme: playback-api-audit/README_ver2.md
+    - User Guide:
+          - Writing Your Docs: user-guide/writing-your-docs.md
+          - Styling Your Docs: user-guide/styling-your-docs.md
+          - Configuration: user-guide/configuration.md
+          - Deploying Your Docs: user-guide/deploying-your-docs.md
+          - Custom Themes: user-guide/custom-themes.md
+          - Plugins: user-guide/plugins.md
+    - About:
+          - Release Notes: about/release-notes.md
+          - Contributing: about/contributing.md
+          - License: about/license.md
+
+extra_css:
+    - css/extra.css
+
+markdown_extensions:
+    - toc:
+          permalink:
+    - admonition
+    - def_list
+
+plugins:
+    - search

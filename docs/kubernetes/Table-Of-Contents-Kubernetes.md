@@ -1,0 +1,104 @@
+# **Table Of Contents**
+
+## **1.** **Introducing Docker and Kubernetes**
+- Understanding Docker Containers and Images  
+    - Building your own Docker images  
+    - Sharing images with other Registries  
+    - Using Docker Volumes for persistent storage  
+    - Understanding how Docker runs containers  
+    - Run multi-container apps with Docker Compose
+- Introducing Kubernetes  
+    - Understanding Kubernetes Architecture  
+    - Running an application in Kubernetes  
+    - Understanding the benifits of using Kubernetes  
+## **2.** **Core concepts**  
+- Pods: running containers in Kubernetes  
+    - Introducing pods  
+    - Creating pods from YAML or JSON descriptiors  
+    - Orginizing Pods with labes  
+    - Listing subsets of Pods through label selectors  
+    - Using labels and selectors to constrain Pod  
+    - Annotating Pods  
+    - Using namespace to group resources  
+    - Stopping and removing Pods  
+- Replication and other controllers: deploying managed pods  
+    - Keeping Pods healthy  
+    - Introducing Replication Controllers  
+    - Using ReplicaSets instead of Replication Controllers  
+    - Running exactly one Pod on each Pod with DaemonSets  
+    - Running Pods that perform a single completable task  
+    - Scheduling Jobs to run periodically or once in the future  
+- Services: enabling clients to discover and talk to Pods  
+    - Introducing services  
+    - Connecting to services living outside the cluster  
+    - Exposing services to external clients  
+    - Exposing services externally through an Ingress resource  
+    - Signaling when a pod is ready is accept connections  
+    - Using a headless service for discovering individual Pods  
+    - Troubleshooting services  
+- Volumes: attaching disk storage to containers  
+    - Introducing volumes  
+    - Using volumes to share data between containers  
+    - Accessing files on the worker node's Filesystem  
+    - Using persistent storage  
+    - Decoupling Pods from the underlying storage technology  
+    - Dynamic provisioning of PersistentVolumes  
+- ConfigMaps and Secrets: configuring applications    
+    - Configuring containerized applications   
+    - Passing command-line arguments to containers  
+    - Setting environment variables for a container  
+    - Decoupling configuration with a ConfigMap  
+    - Using Secrets to pass sensitive data to containers  
+- Accessing Pod metadata and other resource from applications  
+    - Passing metadata through the Downward API  
+    - Talking to the Kubernetes API Server  
+- Deployments: updating applications declaratively  
+    - Updating applications running in Pods  
+    - Performing an automatic rolling update with ReplicationController  
+    - Using Deployments for updating apps declaratively  
+- StatefulSets: deploying replicated stateful applications  
+    - Replicating stateful pods  
+    - Understanding StatefulSets  
+    - Using a StatefulSet  
+    - Discovering peers in a StatefulSet  
+    - Understanding how StatefulSets deal with node failures  
+## **3.** **Advanced Kubernetes**  
+- Networking  
+    - Communication between containers in the same pod  
+    - Communication between pods on the same node  
+    - Communication between pods on different nodes  
+    - Communication between pods and services  
+    - How does DNS work? How do we discover IP addresses?  
+- Securing the Kubernetes API server  
+    - Understanding authentication  
+    - Securing the cluster with role-based access control  
+- Securing cluster nodes and the network  
+    - Using the host node's namespaces in a pod  
+    - Configuring the container's security context  
+    - Restricting the use of security-related features  
+    - Isolating the pod network  
+- Managing pod's computational resources  
+    - Requesting resources for a pod's containers  
+    - Limiting resources available to a container  
+    - Understanding pod QoS classes  
+    - Namespaces  
+    - Setting default requests and limits for pods per namespace  
+    - Limiting the total resources available in a namespace  
+    - Monitoring pod resource usage  
+- Automatic Scaling of pods and cluster nodes  
+    - Horizontal pod autoscaling  
+    - Vertical pod autoscaling  
+    - Horizontal scaling of cluster nodes  
+- Advanced scheduling  
+    - Using taints and tolerations to repel pods from certain nodes  
+    - Using node affinity to attract pods to certain nodes  
+    - Co-locating pods with pod affinity and anti-affinity  
+- Monitoring and Logging  
+    - Accessing the Logs of a Container  
+    - Working with Kubernetes logs  
+    - Working with etcd log  
+    - Monitoring master and node  
+- Extending Kubernetes  
+    - Defining custom API objects  
+    - Extending Kubernetes with the Kubernetes Service Catalog  
+    - Platforms built on top of Kubernetes  
